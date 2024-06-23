@@ -7,13 +7,15 @@ const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "",
     credentials: true,
   })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 5000;
+import userRegister from "./route/user.route.js";
+app.use("/api/vi/user", userRegister);
 dbconnection()
   .then(
     app.listen(PORT, () => {
