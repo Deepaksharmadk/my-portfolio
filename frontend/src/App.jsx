@@ -1,8 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <h1 className="text-3xl bg-white text-right font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<div>Home</div>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
